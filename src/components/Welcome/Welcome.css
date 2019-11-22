@@ -1,0 +1,42 @@
+.welcome {
+	display: grid;
+	grid: 1fr / 1fr;
+	min-width: 800px;
+	max-width: 1000px;
+	max-height: 800px;
+	height: 50vh;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	font-size: 3rem;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	color: #0048aa;
+}
+
+.welcome input {
+	outline: none;
+	border: 0;
+	border-bottom: 2px solid #0048aa;
+	width: 300px;
+	font-size: 2.1rem;
+	padding: 0 30px;
+}
+
+.welcome form {
+	display: inline-grid;
+	grid-gap: 10px;
+	grid: 40px / 300px 50px;
+	align-self: center;
+}
+
+.random-user-name {
+	position: relative;
+	width: 414px;
+	margin: auto;
+	top: 145px;
+	font-size: 2.7rem;
+	padding: 8px;
+	cursor: pointer;
+}

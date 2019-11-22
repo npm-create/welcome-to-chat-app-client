@@ -1,0 +1,44 @@
+.chat-title,
+.chat-form {
+	background: #eee;
+}
+
+.chat-title {
+	display: grid;
+	grid: 36px / 1fr 25px 20px 20px;
+	grid-area: chat-title;
+	grid-gap: 10px;
+	align-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 2.0rem;
+	border-radius: 0 10px 0 0;
+
+	padding: 0 20px;
+}
+
+.logout-modal-buttons {
+	display: grid;
+	grid: 1fr/ 1fr 1fr;
+	grid-gap: 20px;
+	padding-top: 20px;
+}
+
+.chat-title .fa-cog:hover {
+	align-self: center;
+	animation: rotate 8s infinite linear;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.copy-add-user-container {
+	display: grid;
+	grid: 1fr / 1fr 20%;
+}

@@ -1,0 +1,90 @@
+.new-room-creator {
+	display: grid;
+	grid: 40px / 0px 1fr;
+	align-content: center;
+	grid-area: new-room-creator;
+	border-top: 1px solid rgba(0, 0, 0, .25);
+	border-radius: 0 0 0 10px;
+	padding: 0 15px;
+}
+
+.new-room-creator-button {
+	display: grid;
+	position: relative;
+	outline: none;
+	z-index: 2;
+	height: 40px;
+	width: 40px;
+	color: inherit;
+	place-content: center;
+	background: #eee;
+	border-radius: 100%;
+	text-decoration: none;
+	font-size: 3.6rem;
+	line-height: 3.6rem;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .5);
+}
+
+.new-room-creator-button:hover {
+	border: 1px solid #aaa;
+}
+
+.new-room-creator-button:active {
+	background: #ccc;
+}
+
+.new-room-input-container {
+	z-index: 1;
+	overflow: hidden;
+	height: 100%;
+	border-radius: 20px;
+	position: relative;
+}
+
+.new-room-input-button {
+	display: grid;
+	grid: 1fr / 75% 25%;
+	overflow: hidden;
+	height: 100%;
+	position: relative;
+	left: -100%;
+	overflow: hidden;
+	transition: all .3s ease-out;
+}
+
+.new-room-input-button.show {
+	left: 0;
+}
+
+.new-room-input {
+	background: rgba(255, 255, 255, 0.3);
+	outline: none;
+	border: 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	color: #eee;
+	height: 100%;
+	padding-left: 45px;
+}
+
+.new-room-input::placeholder {
+	color: #eee;
+}
+
+.new-room-create-button {
+	border: 1px solid #ccc;
+	background: rgba(255, 255, 255, 0.15);
+	color: #eee;
+	border-radius: 0 20px 20px 0;
+	height: 100%;
+	font-size: 1.6rem;
+}
+
+.new-room-create-button:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.new-room-create-button:active {
+	background: rgba(255, 255, 255, 0);
+}

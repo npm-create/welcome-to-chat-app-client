@@ -1,0 +1,43 @@
+.message-row {
+	display: grid;
+	grid-template-columns: 70%;
+	margin-bottom: 20px;
+}
+
+.message-text {
+	padding: 9px 14px;
+	font-size: 1.6rem;
+	margin-bottom: 5px;
+}
+
+.message-time {
+	font-size: 1.1rem;
+	color: #aaa;
+}
+
+.your-message {
+	justify-content: end;
+	justify-items: end;
+}
+
+.other-message {
+	justify-items: start;
+}
+
+.your-message .message-text {
+	color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 14px 14px 0 14px;
+}
+
+.other-message .message-text {
+	background: #eee;
+	color: #333;
+	border: 1px solid #ccc;
+	border-radius: 14px 14px 14px 0;
+}
+
+.other-message .message-text p {
+	font-size: 1.1rem;
+	padding-bottom: 3px;
+}

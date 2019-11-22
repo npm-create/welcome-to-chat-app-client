@@ -1,0 +1,13 @@
+.room-users-container {
+	display: grid;
+	align-items: center;
+	grid-area: room-users-container;
+	padding: 0 20px;
+	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .75);
+	z-index: 1;
+}
+
+.room-users-info {
+	color: #eee;
+	font-size: 1.2rem;
+}
