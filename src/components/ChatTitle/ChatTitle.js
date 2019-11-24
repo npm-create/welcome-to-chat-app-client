@@ -6,9 +6,11 @@ import Modal from '../UI/Modal/Modal';
 import Btn from '../UI/Btn/Btn';
 import ChatOptions from '../ChatOptions/ChatOptions';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useHistory } from 'react-router-dom';
 
 const ChatTitle = (props) => {
 
+  const history = useHistory();
   const [toggler, setToggler] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
@@ -19,6 +21,7 @@ const ChatTitle = (props) => {
   const onLogout = () => {
     setShowLogout(false);
     props.onLogoutOnServer();
+    history.push('/');
   };
 
   const addUser = props.activeRoomId === 'MAIN_ROOM' ?
