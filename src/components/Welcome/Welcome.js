@@ -45,14 +45,16 @@ const Welcome = (props) => {
 
 
     //Try to verifyUserOnServer userName to 'Main' chat room
-    props.verifyUserOnServer({ userName });
-    props.connectUserToRoomOnServer({ userName, roomName, roomId });
+    if (props.verifyUserOnServer({ userName })) {
+      props.connectUserToRoomOnServer({ userName, roomName, roomId });
+    };
   };
 
   const randomUser = () => {
     const userName = 'user' + randomUserName;
-    props.verifyUserOnServer({ userName });
-    props.connectUserToRoomOnServer({ userName, roomName, roomId });
+    if (props.verifyUserOnServer({ userName })) {
+      props.connectUserToRoomOnServer({ userName, roomName, roomId });
+    };
   }
 
   return (
