@@ -19,7 +19,7 @@ const Welcome = (props) => {
       //eslint-disable-next-line
       invitedTo = location.search.split('&name=')[1];
       if (invitedTo) {
-        setRoomId(location.search);
+        setRoomId('/' + location.search);
         setRoomName(invitedTo);
       }
     }

@@ -21,6 +21,7 @@ export const listener = () => {
     });
 
     socket.on('disconnect', () => {
+      socket.off();
       dispatch(logout());
       dispatch(disconnect());
     });
