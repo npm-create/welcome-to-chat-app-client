@@ -15,11 +15,11 @@ const Welcome = (props) => {
   let invitedTo;
 
   useEffect(() => {
-    if (location.pathname === ('/chat/')) {
+    if (location.pathname.search !== '') {
       //eslint-disable-next-line
       invitedTo = location.search.split('&name=')[1];
       if (invitedTo) {
-        setRoomId('/chat/' + location.search);
+        setRoomId(location.search);
         setRoomName(invitedTo);
       }
     }

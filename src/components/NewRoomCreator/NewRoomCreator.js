@@ -19,7 +19,7 @@ const NewRoomCreator = ({ onConnectUserToRoomOnServer, userName, userId, rooms, 
   const submitHandler = (e) => {
     e.preventDefault();
     const roomName = inputEl.current.value.trim();
-    const roomId = `/chat/?room=${userId}&name=${roomName}`;
+    const roomId = `/?room=${userId}&name=${roomName}`;
     if (Object.keys(rooms).includes(roomId)) {
       setError('You already have room with same name');
     } else if (roomName.length < 3 || roomName.length > 16) {

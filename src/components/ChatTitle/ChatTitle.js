@@ -28,7 +28,7 @@ const ChatTitle = (props) => {
       <i className="fas fa-user-plus"></i>
     </div>;
 
-  const addUserString = 'localhost:3000' + props.activeRoomId;
+  const addUserString = 'welcome-to-chat-app.netlify.com' + props.activeRoomId;
 
   return (
     <>

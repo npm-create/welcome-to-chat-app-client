@@ -4,6 +4,7 @@ import Layout from "./conteiners/Layout";
 import Modal from './components/UI/Modal/Modal';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/';
+import { withRouter } from 'react-router-dom';
 
 const App = ({ listener, disconnect, userName, activeRoomId, error, errorReset, errorMessage }) => {
 
@@ -41,4 +42,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
