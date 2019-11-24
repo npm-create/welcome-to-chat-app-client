@@ -150,17 +150,14 @@ export const handleError = (userName) => {
   };
 };
 
-export const verifyUserOnServer = (userName) => {
+export const verifyUserOnServer = ({ userName }) => {
   return dispatch => {
-    socket.emit(actionTypes.VERIFY_USER, userName, (callback) => {
+    socket.emit(actionTypes.VERIFY_USER, { userName }, (callback) => {
       const { errorMessage, user } = callback;
-
       if (errorMessage) {
         dispatch(setError(errorMessage));
-        return false;
       } else {
         dispatch(verifyUser(user));
-        return true;
       };
     });
   };

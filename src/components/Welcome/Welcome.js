@@ -35,6 +35,12 @@ const Welcome = (props) => {
     //eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    if (props.userName) {
+      props.connectUserToRoomOnServer({ userName: props.userName, roomName, roomId })
+    }
+  })
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const userName = inputEl.current.value.trim();
@@ -43,18 +49,13 @@ const Welcome = (props) => {
       return;
     };
 
-
     //Try to verifyUserOnServer userName to 'Main' chat room
-    if (props.verifyUserOnServer({ userName })) {
-      props.connectUserToRoomOnServer({ userName, roomName, roomId });
-    };
+    props.verifyUserOnServer({ userName });
   };
 
   const randomUser = () => {
     const userName = 'user' + randomUserName;
-    if (props.verifyUserOnServer({ userName })) {
-      props.connectUserToRoomOnServer({ userName, roomName, roomId });
-    };
+    props.verifyUserOnServer({ userName });
   }
 
   return (
@@ -76,6 +77,12 @@ const Welcome = (props) => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    userName: state.chat.userName
+  }
+}
+
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -86,4 +93,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(null, mapDispatchToProps)(Welcome);
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
