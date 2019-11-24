@@ -26,6 +26,8 @@ const NewRoomCreator = ({ onConnectUserToRoomOnServer, userName, userId, rooms, 
       setError('Please enter room name at least 3 symbols and less 16 symbols.');
     } else if (roomName.includes(' ')) {
       setError('Please name room with one word.');
+    } else if (roomName.match(/[а-яА-ЯёЁ]/)) {
+      setError('Please use english symbols');
     } else {
       onConnectUserToRoomOnServer({ userName, roomName, roomId });
       inputEl.current.value = '';
