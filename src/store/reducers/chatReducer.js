@@ -9,6 +9,7 @@ const initialState = {
   searchString: '',
   themeColor: '#0028aa',
   iconColor: '#fff',
+  loading: false,
   error: false,
   errorMessage: ''
 };
@@ -108,6 +109,11 @@ export default (state = initialState, action) => {
         ...state,
         searchString: action.value
       };
+    case actionTypes.LOADING:
+      return {
+        ...state,
+        loading: action.loading
+      }
     case actionTypes.SET_ERROR:
       return {
         ...state,

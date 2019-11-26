@@ -4,6 +4,7 @@ import Btn from '../UI/Btn/Btn';
 import * as actions from '../../store/actions/';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import Spinner from '../UI/Spinner/Spinner';
 
 const Welcome = (props) => {
 
@@ -30,7 +31,10 @@ const Welcome = (props) => {
   randomUserName = '-' + randomUserName[0].toLocaleUpperCase() + randomUserName.slice(1);
 
   useEffect(() => {
-    inputEl.current.focus()
+    if (!props.loading) {
+      inputEl.current.focus()
+
+    }
 
     //eslint-disable-next-line
   }, []);
@@ -49,18 +53,24 @@ const Welcome = (props) => {
       return;
     };
 
+    props.setLoading(true);
     //Try to verifyUserOnServer userName to 'Main' chat room
     props.verifyUserOnServer({ userName });
   };
 
   const randomUser = () => {
     const userName = 'user' + randomUserName;
+    props.setLoading(true);
     props.verifyUserOnServer({ userName });
   }
 
+  if (props.loading) {
+    return <Spinner />
+  }
+
+
   return (
     <>
-
       <div className='welcome'>
         <div>
           <h2>Welcome To Chat!</h2>
@@ -79,6 +89,7 @@ const Welcome = (props) => {
 
 const mapStateToProps = state => {
   return {
+    loading: state.chat.loading,
     userName: state.chat.userName
   }
 }
@@ -86,6 +97,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    setLoading: (loading) => dispatch(actions.setLoading(loading)),
     verifyUserOnServer: ({ userName }) => dispatch(actions.verifyUserOnServer({ userName })),
     connectUserToRoomOnServer: ({ userName, roomName, roomId }) => dispatch(actions.connectUserToRoomOnServer({ userName, roomName, roomId })),
     handleError: (userName) => dispatch(actions.handleError(userName)),

@@ -6,6 +6,7 @@ export {
   applyOptions,
   handleError,
   errorReset,
+  setLoading,
   setError,
   socket,
   listener,

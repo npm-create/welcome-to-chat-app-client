@@ -11,6 +11,7 @@ export const DELETE_ROOM = 'DELETE_ROOM';
 
 export const APPLY_OPTIONS = 'APPLY_OPTIONS';
 
+export const LOADING = 'LOADING';
 export const ERROR_RESET = 'ERROR_RESET';
 export const SET_ERROR = 'SET_ERROR';
 

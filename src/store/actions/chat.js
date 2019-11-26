@@ -102,6 +102,13 @@ export const setMessages = ({ message, roomId }) => {
   };
 };
 
+export const setLoading = (loading) => {
+  return {
+    type: actionTypes.LOADING,
+    loading
+  }
+}
+
 export const errorReset = () => {
   return {
     type: actionTypes.ERROR_RESET
@@ -169,8 +176,11 @@ export const connectUserToRoomOnServer = ({ userName, roomName, roomId }) => {
       const { room, errorMessage } = callback;
       if (errorMessage) {
         dispatch(setError(errorMessage));
+        dispatch(setLoading(false));
       } else {
         dispatch(connetUserToRoom(room));
+        dispatch(setLoading(false));
+
       };
     });
   };
